@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        /**
+ * @param {string} S
+ * @return {string}
+ */
+var removeOuterParentheses = function(S) {
+      S = S.replace(" ", "").split("");
+      var currentChunk = "";     // Str within braces
+      var braces = 0;      // braces count for expression under consideration
+      var stack = [];
+
+      //while(stack.length != 1){
+      stack = parsing(S);        // Get sub expressions from main expression
+      for (let index = 0; index < stack.length; index++) {
+          var ele = String(stack[index]);
+          var expression = "";
+
+          for(var i=1; i < ele.length-1; i++){
+            expression = expression + ele.charAt(i);
+          }
+          stack[index] = expression;
+      }
+
+    return stack.join("");
+};
+
+function parsing(expression) {
+      var internal_stack = [];
+      var braces = 0;
+      var currentChunk = "";
+
+      for (let index = 0; index < expression.length; index++) {
+        const element = expression[index];
+
+        // If the element is not a number
+        if (element == "(") {
+          braces = braces + 1;
+          currentChunk = currentChunk + element;
+        }
+        else if (element == ")") {
+          braces = braces - 1;
+          currentChunk = currentChunk + element;
+        }
+
+
+        if (braces == 0 && currentChunk != "") {
+          internal_stack.push(currentChunk);
+          currentChunk = "";
+        }
+      }
+
+      return internal_stack;
+    }
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
