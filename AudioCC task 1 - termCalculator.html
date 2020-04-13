@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+
+  </title>
+
+  <script>
+    /*
+    These rules are: () before * and /, * and / before + and -. Several * and / are calculated from left to
+    right, several + and - also from left to right.
+    */
+
+    var user_str = [];
+    var stack = [];
+
+    function calculate() {
+      user_str = (document.getElementById("user_str").value).replace(" ", "").split("");
+      var currentChunk = "";     // Str within braces
+      var braces = 0;      // braces count for expression under consideration
+      console.log(user_str);
+
+      //while(stack.length != 1){
+      stack = parsing(user_str);        // Get sub expressions from main expression
+
+      for (let index = 0; index < stack.length; index++) {
+        var element = stack[index];
+
+        // Get sub-sub expressions from the sub expressions. and then recurse to get solution of the sub expression
+        var chunks_of_internal_exp = parsing(element);
+        console.log("chunks_of_internal_exp.length : " + chunks_of_internal_exp.length);
+
+        // This means that we have got the solution for sub sub expression
+        if (chunks_of_internal_exp.length == 1) {
+          console.log("replacing stack " + index + " with  " + chunks_of_internal_exp[0]);
+          stack[index] = chunks_of_internal_exp[0];           // store at position of sub expression only.
+        }
+        /*while(chunks_of_internal_exp.length > 1){
+          var chunks_of_internal_exp = parsing(chunks_of_internal_exp)
+        }*/
+      }
+
+      if (!are_expressions_remaining(stack)) {
+        console.log("No expressions are remaininng");
+        console.log(stack);
+
+        var operators = ["+", "-", "/", "*"];   // Operators arranged based on their precedence -- popping operations
+        operator = operators.pop();
+
+        // Last remaining element in stack is the solution
+        while (stack.length != 1) {
+          const occurance = stack.indexOf(operator);
+          if (occurance > 0) {
+            // Perform the operation and get the result of simple arithmatic operations
+            stack[occurance] = perform_arithmatic(stack[occurance - 1], operator, stack[occurance + 1]);
+            stack.splice(occurance - 1, 1);           // Remove first operand
+            stack.splice(occurance, 1);             // Remove second operand
+            console.log(stack)
+          } else if (operators.length >= 1) {
+            operator = operators.pop();             // get next precedented operator
+            console.log("Operator : " + operator)
+          }
+        }
+
+
+        //    }
+
+        alert("The annwer is : " + stack[0]);
+        console.log(stack);
+      }
+
+      function perform_arithmatic(number1, op, number2) {
+        switch (op) {
+          case "+":
+            return number1 + number2;
+            break;
+
+          case "-":
+            return number1 - number2;
+            break;
+
+          case "*":
+            return number1 * number2;
+            break;
+
+          case "/":
+            if (number2 == 0) {
+              alert("Can not divide by zero");
+              return 0;
+            } else {
+              return number1 / number2;
+            }
+            break;
+        }
+      }
+    }
+
+    function are_expressions_remaining(stack) {
+      for (let index = 0; index < stack.length; index++) {
+        if (stack[index].length > 1) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function parsing(expression) {
+      var internal_stack = [];
+      var braces = 0;
+      var currentChunk = "";
+
+      for (let index = 0; index < expression.length; index++) {
+        const element = expression[index];
+
+        // If the element is not a number
+        if (element == "(") {
+          braces = braces + 1;
+          currentChunk = currentChunk + element;
+
+        } else if (element == ")") {
+          braces = braces - 1;
+          currentChunk = currentChunk + element;
+        }
+        else {
+          currentChunk = currentChunk + element;
+        }
+
+        if (braces == 0 && currentChunk != "") {
+          internal_stack.push(currentChunk);
+          if (internal_stack[0] == expression && (["+", "-", "*", "/"].indexOf(expression) < 0)) {
+            console.log(expression + " = " + eval(expression));
+
+            internal_stack[0] = eval(expression);
+          }
+          currentChunk = "";
+        }
+      }
+
+      return internal_stack;
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <h1>Term calculator</h1>
+
+  <p>
+    Develop a term calculator that can handle (), *, /, +, and -. For example, if the user enters the
+    term (5 + 8) * 3/8 +3, the term calculator shall calculate and output the result according to the school
+    rules of term calculations.<BR />
+    These rules are: () before * and /, * and / before + and -. Several * and / are calculated from left to
+    right, several + and - also from left to right.
+  </p>
+  <BR />
+
+  <input name="user_str" id="user_str" placeholder="Type Expression Here">
+  <button onclick="calculate();"> calculate</button>
+  <BR /><BR />
+  <BR />
+
+  Please try to avoid using spaces in the expression;<BR />
+  I have hnadled the space condition but in case if it gives any error then please try after removing the spaces;
+
+</body>
+
+</html>

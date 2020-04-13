@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Numbers Program - Task 2
+    </title>
+
+    <script>
+
+        var user_str = "";          // stores user input
+        var arr = [];          // individual splitted numbers from user input
+
+        // Main entry point of the program
+        function check() {
+            console.log("Inside Check");
+            try {
+                user_str = document.getElementById("user_str").value;
+
+                arr = user_str.split("");
+
+                // Recurssion
+                while (!check_number(arr)) {
+
+                    for (let index = 0; index < arr.length; index++) {
+                        if (parseInt(arr[index]) > parseInt(arr[index + 1])) {
+
+                            // reducing by 1 decimal
+                            arr[index] = parseInt(arr[index]) - 1;
+
+                            // Replacing all numbers ahead with 9
+                            replace_with_9(index + 1);
+                        }
+                    }
+                }
+
+                console.log("Possible number is : " + arr.join(""));
+                alert("Possible number is : " + arr.join(""));
+            }
+            catch (e) {
+                console.log(e);
+            }
+        }
+
+        // Replaces all the numbers from specified index with 9 till end of the input
+        function replace_with_9(index) {
+            for (var i = index; i < arr.length; i++) {
+                arr[i] = "9";
+            }
+        }
+
+        // Check if the current number satisfies the condition of accepted number - all numbers should be in ascending order
+        function check_number(arr) {
+            for (let index = 0; index < (arr.length - 1); index++) {
+                console.log(arr[index] + " , " + arr[index + 1]);
+                console.log(arr[index] > arr[index + 1]);
+
+                if (parseInt(arr[index]) > parseInt(arr[index + 1])) {
+                    console.log(arr[index] + " -- " + arr[index + 1])
+                    console.log("Returning false");
+                    return false;          // all digits in number are not in ascending order
+                }
+            }
+
+            console.log("Returning true"); // all digits in number are in ascending order
+            return true;
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <H1>Numbers Sorted in Ascending Order</H1>
+    <p> Peter likes numbers. As a meditation exercise, he likes to write down all the numbers starting
+        with 1 whose digits are sorted in ascending order. For example, 11235888 is such a number. After a
+        while, he stops. <BR />
+        Write an efficiently designed program which, after entering a number between 1 and 10 ^ 18,
+        represents the last number checked by Peter, outputs the last number written down by Peter.
+        Examples: <BR />
+        <ul>
+            <li>Input: 23245 Output: 22999</li>
+            <li>Input: 11235888 Output: 11235888</li>
+            <li>Input: 111110 Output: 99999</li>
+            <li>Input: 33245 Output: 29999 </li>
+        </ul>
+
+    </p>
+
+    <BR />
+
+    <input name="user_str" id="user_str" placeholder="Enter Number here" />
+    <button onclick="check();">Check</button>
+
+    <BR />
+    <BR />
+    <BR />
+
+    Enter number and Hit Check button to get result<BR />
+    I have hnadled the space condition but in case if it gives any error then please try after removing the spaces;
+
+
+</body>
+
+</html>
