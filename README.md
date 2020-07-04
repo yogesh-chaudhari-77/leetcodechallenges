@@ -1,0 +1,74 @@
+# Leet Code Challenges
+
+This repository holds the scripts for leetcode coding challenges.
+
+- Defanging an IP Address
+- Jewels and Stones
+- How Many Numbers Are Smaller Than the Current Number
+- Decompress Run-Length Encoded List
+- Subtract the Product and Sum of Digits of an Integer
+- Create Target Array in the Given Order
+- Split a String in Balanced Strings
+- Find Numbers with Even Number of Digits
+- Range Sum of BST
+- Convert Binary Number in a Linked List to Integer
+- To Lower Case
+- Maximum 69 Number
+- Remove Outermost Parentheses
+- Big Countries
+- Decrypt String from Alphabet to Integer Mapping
+- Unique Morse Code Words
+- Count Negative Numbers in a Sorted Matrix
+- Find N Unique Integers Sum up to Zero
+- Flipping an Image
+- Increasing Decreasing String
+- Generate a String With Characters That Have Odd Counts
+- Swap Salary
+- Self Dividing Numbers
+- N-Repeated Element in Size 2N Array
+- Robot Return to Origin
+- Search in a Binary Search Tree
+- DI String Match
+- Squares of a Sorted Array
+- Array Partition I
+- Lucky Numbers in a Matrix
+- Peak Index in a Mountain Array
+- Reverse Words in a String III
+- Middle of the Linked List
+- Remove All Adjacent Duplicates In String
+- Reverse String
+- Unique Email Addresses
+- Fibonacci Number
+- Not Boring Movies
+- Find Lucky Integer in an Array
+- Delete Node in a Linked List
+- Goat Latin
+- Duplicate Emails
+- String Matching in an Array
+- Reverse Only Letters
+- Move Zeroes
+- Rotated Digits
+- Add Digits
+- Duplicate Zeros
+- Two Sum II - Input array is sorted
+- Minimum Absolute Difference in BST
+- Detect Capital
+- First Unique Character in a String
+- Ransom Note
+- Customers Who Never Order
+- Minimum Distance Between BST Node
+- Remove Element
+- Add String
+- Student Attendance Record I
+- Two Su
+- Remove Duplicates from Sorted Array
+- Second Minimum Node In a Binary Tre
+- Long Pressed Name
+- Remove Linked List Element
+- Perfect Number
+- Insert into a Binary Search Tre
+- Binary Tree Inorder Traversal
+- Kth Smallest Element in a BS
+- Binary Search Tree Iterator
+- Binary Tree Preorder Traversal
+- Binary Tree Postorder Traversal
