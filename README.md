@@ -72,3 +72,20 @@ This repository holds the scripts for leetcode coding challenges.
 - Binary Search Tree Iterator
 - Binary Tree Preorder Traversal
 - Binary Tree Postorder Traversal
+
+##Solved in Java 
+
+- 217. Contains Duplicate
+- 219. Contains Duplicate II
+- 1290. Convert Binary Number in a Linked List to Integer
+- 1299. Replace Elements with Greatest Element on Right Side
+- 1342. Number of Steps to Reduce a Number to Zero
+- 1431. Kids With the Greatest Number of Candies
+- 1436. Destination City
+- 1450. Number of Students Doing Homework at a Given Time
+- 1464. Maximum Product of Two Elements in an Array
+- 1470. Shuffle the Array	
+- 1475. Final Prices With a Special Discount in a Shop
+- 1480. Running Sum of 1d Array
+- 1512. Number of Good Pairs
+- 1528. Shuffle String
