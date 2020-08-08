@@ -73,7 +73,7 @@ This repository holds the scripts for leetcode coding challenges.
 - Binary Tree Preorder Traversal
 - Binary Tree Postorder Traversal
 
-##Solved in Java 
+# Solved in Java 
 
 - 217. Contains Duplicate
 - 219. Contains Duplicate II
