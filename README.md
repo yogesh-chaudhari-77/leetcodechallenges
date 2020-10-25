@@ -89,3 +89,7 @@ This repository holds the scripts for leetcode coding challenges.
 - Running Sum of 1d Array
 - Number of Good Pairs
 - Shuffle String
+- Last Stone Weight
+- Maximum 69 Number
+- Binary Search Tree to Greater Sum Tree
+- Convert BST to Greater Tree
