@@ -2,6 +2,8 @@
 
 This repository holds the scripts for leetcode coding challenges.
 
+# Solved Using Python
+
 - Defanging an IP Address
 - Jewels and Stones
 - How Many Numbers Are Smaller Than the Current Number
