@@ -95,15 +95,15 @@ This repository holds the scripts for leetcode coding challenges.
 - Maximum 69 Number
 - Binary Search Tree to Greater Sum Tree
 - Convert BST to Greater Tree
-
-13-11-2020 
 - Thousand Separator
 - Monotonic Array
 - Majority Element
 - Max Consecutive Ones
-
-14-11-2020
 - Number of Good Pairs
 - Sum of All Odd Length Subarrays
 - Matrix Diagonal Sum
 - Find Common Characters
+- Valid Parentheses
+- Missing Number
+- Search Insert Position
+- XOR Operation in an Array
