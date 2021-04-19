@@ -107,3 +107,12 @@ This repository holds the scripts for leetcode coding challenges.
 - Missing Number
 - Search Insert Position
 - XOR Operation in an Array
+- Search Insert Position
+- Plus One
+- Missing Number
+- Valid Parentheses
+- Richest Customer Wealth
+- Sign of the Product of an Array
+- Design Parking System
+- Count Items Matching a Rule
+- Merge Strings Alternately
