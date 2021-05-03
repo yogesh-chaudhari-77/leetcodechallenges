@@ -116,3 +116,11 @@ This repository holds the scripts for leetcode coding challenges.
 - Design Parking System
 - Count Items Matching a Rule
 - Merge Strings Alternately
+- Check If Two String Arrays are Equivalent
+- Count the Number of Consistent Strings
+- Available Captures for Rook
+- Remove Duplicates from Sorted List
+- Intersection of Two Arrays
+- Intersection of Two Arrays II
+- Find the Highest Altitude
+- Minimum Operations to Make the Array Increasing
